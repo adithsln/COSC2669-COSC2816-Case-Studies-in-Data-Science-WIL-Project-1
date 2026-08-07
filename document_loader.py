@@ -14,33 +14,12 @@ doc
 
 os.makedirs("C:/rag_chatbot/data/text_file", exist_ok=True)
 
-sample_text={
-    "C:/rag_chatbot/data/text_file/python_intro.txt":"""Python Programming Introduction
-    
-    Python is a high-levelm interpreted programming language known for its simplicity and readability.
-    
-    Key Features:
-    -Easy to learn and use
-    -Extensive standard library
-    -Cross-platform compatibility
-    -Strong community support
-    """
 
-}
-
-
-for filepath, content in sample_text.items():
-    with open(filepath,'w',encoding="utf-8") as f:
-        f.write(content)
-
-print("Sample text files created!")
 
 ### TextLoader
 from langchain_community.document_loaders import TextLoader
 
-loader=TextLoader("C:/rag_chatbot/data/text_file/python_intro.txt", encoding="utf-8")
-document=loader.load()
-print(document)
+
 
 
 ### Directory Loader
