@@ -333,3 +333,38 @@ for result in results:
     print("Metadata:", result["metadata"])
     print("Content:")
     print(result["content"][:500])
+
+
+from dotenv import load_dotenv
+from langchain_ollama import OllamaEmbeddings, ChatOllama
+load_dotenv()
+
+### Initialize LLM
+
+llm = ChatOllama(model="llama3.2", temperature=0.3)
+
+## 2. Simple RAG function: retrieve context + generate response
+
+def rag_simple(query, reteiver, llm, top_k=3):
+    ### Retrieve the context
+    results = reteiver.retrieve(query,top_k=top_k)
+    context="\n\n".join([doc['content'] for doc in results]) if results else ""
+    if not context:
+        return "No relevant context found to answer the question"
+
+    ### Generate the answer using the llm
+    prompt=f"""Use the following context to answer the question concisely.
+        Context:
+        {context}
+
+        Question: {query}
+        
+        Answer:"""
+    
+    response = llm.invoke([prompt.format(context=context, query=query)])
+    return response.content
+
+
+
+answer=rag_simple("How to deal with anxiety as a young person?", rag_retriever,llm)
+print(answer)
