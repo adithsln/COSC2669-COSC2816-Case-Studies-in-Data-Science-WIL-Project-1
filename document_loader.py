@@ -348,7 +348,8 @@ if __name__ == "__main__":
 
     # Retrieval test retained from the team's repository.
     results = rag_retriever.retrieve(
-        "Who is Andrea Liss?"
+        '''What exact steps should an Australian university student 
+        follow to report cyberbullying to the eSafety Commissioner?''',
     )
 
     for result in results:
@@ -367,7 +368,8 @@ if __name__ == "__main__":
 
     # Existing team RAG test.
     answer = rag_simple(
-        "How to deal with anxiety as a young person?",
+       '''What exact steps should an Australian university student 
+        follow to report cyberbullying to the eSafety Commissioner?''',
         rag_retriever,
         llm,
     )
