@@ -346,32 +346,31 @@ if __name__ == "__main__":
         embedding_manager,
     )
 
-    # Retrieval test retained from the team's repository.
-    results = rag_retriever.retrieve(
-        '''What exact steps should an Australian university student 
-        follow to report cyberbullying to the eSafety Commissioner?''',
-    )
-
-    for result in results:
-        print("\n=================================")
-        print("ID:", result["id"])
-        print("Similarity Score:", result["similarity_score"])
-        print("Metadata:", result["metadata"])
-        print("Content:")
-        print(result["content"][:500])
-
-    # Initialize the team's Ollama LLM.
+    # Initialize Ollama LLM.
     llm = ChatOllama(
         model="llama3.2",
         temperature=0.3,
     )
 
-    # Existing team RAG test.
-    answer = rag_simple(
-       '''What exact steps should an Australian university student 
-        follow to report cyberbullying to the eSafety Commissioner?''',
-        rag_retriever,
-        llm,
-    )
+    # Three-question smoke test.
+    questions = [
+        "According to the review, which mental health risks were most commonly studied in social-media machine-learning research?",
+        "According to the review, why should social-media mental-health models be treated as risk-detection tools rather than clinical diagnostic systems?",
+        "What exact steps should an Australian university student follow to report cyberbullying to the eSafety Commissioner?",
+    ]
 
-    print(answer)
+    for question in questions:
+        print("\n=================================")
+        print("Question:", question)
+        print("=================================")
+
+        results = rag_retriever.retrieve(question, top_k=3)
+
+        for result in results:
+            print("\nRank:", result["rank"])
+            print("Similarity Score:", result["similarity_score"])
+            print("Metadata:", result["metadata"])
+            print("Content:", result["content"][:500])
+
+        print("\nGenerated Answer:")
+        print(rag_simple(question, rag_retriever, llm, top_k=3))
