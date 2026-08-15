@@ -18,4 +18,4 @@
 
 
 
-**document\_loader.py** contains our team's MiniLM - ChromaDB - Ollama RAG prototype. The Walert Reproduction/ directory contains the original Walert quantitative evaluation code, data, and reference outputs, copied unchanged from the supplied Walert repository for baseline reproduction experiments.
+**document\_loader.py** contains our team's **MiniLM - ChromaDB - Ollama RAG** prototype. The **Walert Reproduction/** directory contains the original Walert quantitative evaluation code, data, and reference outputs, copied unchanged from the supplied Walert repository for baseline reproduction experiments.
