@@ -1,0 +1,51 @@
+query_id,query_text,expected_doc_id
+Q001,Does it get worse if I use a phone just texting instead of have a smartphone with internet?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1179
+Q002,Is cyberbullying actually got increased now than before the pandemic?,Adolescent_Cyberbullying_and_Cyber_Victimization.pdf_279
+Q003,Does talking to my parents protect me from getting bullied online?,The_impact_of_cyberbullying_on_adolescents.pdf_1486
+Q004,Do people who bully others online sometimes get bullied back?,The_impact_of_cyberbullying_on_adolescents.pdf_1477
+Q005,Does having siblings make you not get cyberbullied?,Adolescent_Cyberbullying_and_Cyber_Victimization.pdf_311
+Q006,Do boys and girls get cyberbullied differently? Or it is common for all?,The_impact_of_cyberbullying_on_adolescents.pdf_1479
+Q007,Does watching violent movies/shows and playing violent games make someone more likely to bully people online?,Adolescent_Cyberbullying_and_Cyber_Victimization.pdf_320
+Q008,Will I get anxiety if I start posting my own things instead of just scroll and watch stuff?,Studies_of_Depression_and_Anxiety_Using_Reddit_as_a_Data_Source.pdf_1403
+Q009,What does it mean to be parasocial mean and does that make me more anxious if I am parasocial?,Communication_attributes_modify_the_anxiety_risk_associated_with_social_media_addiction.pdf_406
+Q010,Is following a bunch of random influencers bad for my mental health?,Social_media-based_interventions_for_adolescent_and_young_adult_mental.pdf_1278
+Q011,Does posting to a big audience feel different (mentally) than texting one friend?,Communication_attributes_modify_the_anxiety_risk_associated_with_social_media_addiction.pdf_387
+Q012,Why does arguing with people online (social conflict) seem to hit harder than in person?,Communication_attributes_modify_the_anxiety_risk_associated_with_social_media_addiction.pdf_398
+Q013,"If I mostly watch stories instead of DMing friends, is that a red flag?",Communication_attributes_modify_the_anxiety_risk_associated_with_social_media_addiction.pdf_386
+Q014,Can how I use social media matter more than how much time I spend on it?,Communication_attributes_modify_the_anxiety_risk_associated_with_social_media_addiction.pdf_412
+Q015,Is it true that social media addiction and anxiety kind of feed off each other?,Correlations_between_social_media_addiction_and_anxiety.pdf_484
+Q016,"What's FoMO actually called in psychology, and is it the biggest social media risk factor?",Correlations_between_social_media_addiction_and_anxiety.pdf_494
+Q017,"Can using social media too much lower my self-esteem, or is it the other way around?",Correlations_between_social_media_addiction_and_anxiety.pdf_488
+Q018,"Does feeling lonely make me use social media more, or does social media make me lonelier?",Correlations_between_social_media_addiction_and_anxiety.pdf_485
+Q019,"Is there real science behind depression and social media use, or is that just something adults say?",Social_Media_Algorithms_and_Teen_Addiction.pdf_1173
+Q020,"If I already feel anxious, does that mean I'm more likely to get addicted to my phone?",Correlations_between_social_media_addiction_and_anxiety.pdf_452
+Q021,What counts as problematic social media use vs. just normal teen scrolling?,Problematic_Social_Media_Use_in_Adolescents_and_Young_Adults.pdf_1015
+Q022,"If I've been both bullied and bullied someone else online, does that make my anxiety worse?",Cyberbullying_and_Social_Anxiety.pdf_542
+Q023,Why would kids who are only a little involved in cyberbullying feel more scared of new people?,Cyberbullying_and_Social_Anxiety.pdf_558
+Q024,Does being a bystander who just watches bullying happen affect my mental health too?,Cyberbullying_and_Social_Anxiety.pdf_571
+Q025,Is it normal to avoid talking to people I don't know well because of stuff I've seen online?,Cyberbullying_and_Social_Anxiety.pdf_574
+Q026,Can being scared of being judged online actually be linked to social anxiety in real life?,Cyberbullying_and_Social_Anxiety.pdf_538
+Q027,"If I've never been bullied online, could I still be affected just from seeing it happen to others?",Cyberbullying_and_Social_Anxiety.pdf_560
+Q028,Do apps like TikTok and Instagram actually use AI to keep me hooked on purpose?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1166
+Q029,Is my brain literally being changed by using social media too much?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1178
+Q030,What is the dopamine cycle everyone talks about with social media?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1176
+Q031,Does getting likes and comments actually work like a drug?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1177
+Q032,Can social media algorithms mess with my sleep and make my anxiety worse?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1180
+Q033,Is it true that using my phone right before bed messes with my brain chemistry?,sg-youth-mental-health-social-media-advisory.pdf_1113
+Q034,Why do I feel like I need to check my phone even when I don't want to?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1169
+Q035,Are there actual apps or programs designed to help teens with anxiety through social media?,Social_media-based_interventions_for_adolescent_and_young_adult_mental.pdf_1210
+Q036,"Could a moderated online group actually help me feel less anxious, like therapy?",Social_media-based_interventions_for_adolescent_and_young_adult_mental.pdf_1220
+Q037,"Is it safe to join an online support group for anxiety, or could it make things worse?",Social_media-based_interventions_for_adolescent_and_young_adult_mental.pdf_1279
+Q038,"Do these mental health apps/programs actually work, or is it mostly untested?",Social_media-based_interventions_for_adolescent_and_young_adult_mental.pdf_1224
+Q039,"Would a chatbot like you actually be able to help, based on real research?",Social_media-based_interventions_for_adolescent_and_young_adult_mental.pdf_1231
+Q040,Is there a difference between healthy online support and just doom-scrolling forums?,The_Impacts_of_Social_Media_on_Behavioral_Health_in_Adolescents.pdf_1667
+Q041,What should I look for to know if an online mental health tool is legit?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1184
+Q042,Why do I always compare myself to people who seem better than me online?,Social_comparison_processes_in_social_ph.pdf_1313
+Q043,Is comparing myself to influencers different from comparing myself to my friends?,formative_v7i1e43037.pdf_764
+Q044,Does comparing myself to people worse off than me actually make me feel better?,Social_comparison_processes_in_social_ph.pdf_1313
+Q045,Why does seeing someone prettier or cooler than me on Instagram ruin my whole mood?,Social_comparison_processes_in_social_ph.pdf_1307
+Q046,"If I'm socially anxious, am I more likely to make these upward comparisons than other people?",Social_comparison_processes_in_social_ph.pdf_1306
+Q047,"Can constantly comparing myself to others online actually cause anxiety, or just make it worse?",Social_comparison_processes_in_social_ph.pdf_1314
+Q048,How do I know if my social media use is normal or actually a problem?,Social_Media_Algorithms_and_Teen_Addiction.pdf_1170
+Q049,What are some healthy ways to use social media without it messing with my anxiety?,sg-youth-mental-health-social-media-advisory.pdf_1117
+Q050,"If I think I might have social anxiety because of social media, what should I actually do about it?",sg-youth-mental-health-social-media-advisory.pdf_1117
