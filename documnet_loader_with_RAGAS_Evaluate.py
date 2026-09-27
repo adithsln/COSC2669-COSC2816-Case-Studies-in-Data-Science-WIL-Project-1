@@ -11,7 +11,6 @@ from langchain_ollama import ChatOllama
 from sentence_transformers import SentenceTransformer
 import chromadb
 
-
 DATA_DIR = "data"
 TEXT_DIR = DATA_DIR + "/txt_file"
 PDF_DIR = DATA_DIR + "/pdf_file"
