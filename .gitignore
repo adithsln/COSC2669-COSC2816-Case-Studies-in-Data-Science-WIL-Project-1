@@ -1,0 +1,17 @@
+﻿.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.env.*
+!.env.example
+
+data/vector_store/
+
+/RAGAS_METRIC_CLEAN.csv
+/WIL_eval_run_log.txt
+/WIL_python_version.txt
+/WIL_python_packages.txt
+/WIL_ollama_models.txt
+/WIL_script_hash.txt
+/WIL_git_commit.txt
