@@ -11,6 +11,7 @@ from typing import List, Dict, Any
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 import re
 import csv
+
 # Walert uses a relative DATA_DIR pattern.
 # The same pattern is used here instead of a hard-coded C: drive.
 DATA_DIR = "data"
@@ -461,7 +462,6 @@ if __name__ == "__main__":
     
     #    print(f"\nSuccessfully generated {output_file}. Plese check")
 
-    
     # 50 Questions from the trained pdf documents 
     my_questions = [
         "Does it get worse if I use a phone just texting instead of have a smartphone with internet?",
@@ -566,4 +566,3 @@ if __name__ == "__main__":
 
         if len(chat_memory) > 6:
             chat_memory = chat_memory[-6:]
-
