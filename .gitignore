@@ -15,3 +15,4 @@ data/vector_store/
 /WIL_ollama_models.txt
 /WIL_script_hash.txt
 /WIL_git_commit.txt
+/WIL_eval_*_log.txt
