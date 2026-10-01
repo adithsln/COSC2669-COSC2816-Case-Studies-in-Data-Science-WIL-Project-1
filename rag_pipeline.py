@@ -12,7 +12,6 @@ from support_navigation import (
     route_question,
 )
 
-
 BASE_DIR = Path(__file__).resolve().parent
 VECTOR_STORE_DIR = BASE_DIR / 'data' / 'vector_store'
 EMBEDDING_MODEL = 'all-MiniLM-L6-v2'
@@ -32,7 +31,6 @@ URGENT_CONTEXT = re.compile(
     re.I,
 )
 
-
 class EmbeddingManager:
     """Generate MiniLM embeddings for service records and student questions."""
 
@@ -47,7 +45,6 @@ class EmbeddingManager:
 
     def generate_embeddings(self, texts):
         return self.model.encode(texts, show_progress_bar=False)
-
 
 class VectorStore:
     """Store the official service catalogue in a local Chroma collection."""
@@ -91,7 +88,6 @@ class VectorStore:
                 for record in records
             ],
         )
-
 
 class RAGRetriever:
     """Retrieve the most relevant eligible service records from Chroma."""
@@ -148,7 +144,6 @@ class RAGRetriever:
 
         return records
 
-
 def _model_choice(llm, question, candidates):
     """Ask the local LLM to choose only from the retrieved service IDs."""
     from langchain_core.messages import HumanMessage, SystemMessage
@@ -199,7 +194,6 @@ def _model_choice(llm, question, candidates):
         return 'NONE'
 
     return selected_id
-
 
 def run_navigation(
     question,
@@ -515,7 +509,6 @@ def run_navigation(
         'selected_id': selected_id,
         'source_url': selected_record['url'],
     }
-
 
 def init_rag_system():
     """Initialise the source catalogue, Chroma retriever and local Llama model."""

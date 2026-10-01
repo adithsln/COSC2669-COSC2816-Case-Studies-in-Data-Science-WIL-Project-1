@@ -11,7 +11,6 @@ import streamlit as st
 from rag_pipeline import init_rag_system, run_navigation
 from support_navigation import canonical_institution_reply, detect_institution
 
-
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / 'assets'
 LOGO_FILE = ASSETS_DIR / 'wil_chatbot_logo.png'
@@ -30,7 +29,6 @@ INSTITUTION_DISPLAY_NAMES = {
     'MONASH': 'Monash University',
     'MELBOURNE': 'University of Melbourne',
 }
-
 
 st.set_page_config(
     page_title=APP_TITLE,
@@ -54,12 +52,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
 @st.cache_resource(show_spinner='Loading the support-navigation chatbot...')
 def load_backend():
     """Load the RAG pipeline once for the current Streamlit process."""
     return init_rag_system()
-
 
 def list_saved_chats():
     """Load locally saved chats when chat persistence is enabled."""
@@ -83,7 +79,6 @@ def list_saved_chats():
         key=lambda chat: chat.get('timestamp', ''),
         reverse=True,
     )
-
 
 def save_current_chat():
     """Save the current chat locally only when explicitly enabled."""
@@ -114,7 +109,6 @@ def save_current_chat():
         encoding='utf-8',
     )
 
-
 def archive_current_chat():
     """Keep the current chat available within the active Streamlit session."""
     if not st.session_state.get('messages'):
@@ -138,7 +132,6 @@ def archive_current_chat():
         'messages': list(st.session_state.messages),
     }
 
-
 def start_new_chat():
     """Archive the visible conversation and start an empty chat."""
     if 'chat_archive' not in st.session_state:
@@ -151,7 +144,6 @@ def start_new_chat():
     st.session_state.pending_question = None
     st.session_state.pending_institution = None
 
-
 def open_chat(chat):
     """Open a previous chat in the current Streamlit session."""
     archive_current_chat()
@@ -160,7 +152,6 @@ def open_chat(chat):
     st.session_state.messages = chat.get('messages', [])
     st.session_state.pending_question = None
     st.session_state.pending_institution = None
-
 
 if 'chat_archive' not in st.session_state:
     st.session_state.chat_archive = {}
@@ -173,7 +164,6 @@ if 'pending_question' not in st.session_state:
 
 if 'pending_institution' not in st.session_state:
     st.session_state.pending_institution = None
-
 
 with st.sidebar:
     if LOGO_FILE.is_file():
@@ -208,7 +198,6 @@ with st.sidebar:
             open_chat(chat)
             st.rerun()
 
-
 logo_left, logo_centre, logo_right = st.columns([1, 1, 1])
 
 with logo_centre:
@@ -234,7 +223,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
 try:
     retriever, llm, safety_guard = load_backend()
 except Exception as error:
@@ -245,11 +233,9 @@ except Exception as error:
     st.code(str(error))
     st.stop()
 
-
 for message in st.session_state.messages:
     with st.chat_message(message['role']):
         st.markdown(message['content'])
-
 
 prompt = st.chat_input('Ask about an official student support pathway...')
 
