@@ -51,6 +51,19 @@ MELBOURNE = re.compile(
     re.I,
 )
 
+GREETING = re.compile(
+    r'^\s*(?:hi|hello|hey|good morning|good afternoon|good evening)'
+    r'(?:\s+(?:there|boss|bro|buddy|mate|friend|friemd|'
+    r'my\s+(?:friend|friemd|buddy|mate|bro|boss)))?'
+    r'[!. ]*$',
+    re.I,
+)
+
+STUDENT_INTRO = re.compile(
+    r"^\s*(?:i am|i'm|im)\s+(?:a|an)\s+(?:university|tertiary)\s+student[.! ]*$",
+    re.I,
+)
+
 ONLINE_SUPPORT = re.compile(
     r'\b(?:online abuse|online harassment|cyber(?:bully\w*|bullied| abuse|stalk\w*)|'
     r'social media|eSafety|report (?:an )?online)\b',
@@ -138,6 +151,30 @@ def detect_institution(question):
 
     return next(iter(institutions), None)
 
+def canonical_institution_reply(text):
+    """Return the canonical institution name for a short institution-only reply."""
+    cleaned = text.strip()
+
+    if re.fullmatch(r'rmit\s*(?:up|university pathways)[.!]?', cleaned, re.I):
+        return 'RMIT UP'
+
+    if re.fullmatch(r'rmit(?:\s+(?:university|uni))?[.!]?', cleaned, re.I):
+        return 'RMIT University'
+
+    if re.fullmatch(r'monash(?:\s+university)?[.!]?', cleaned, re.I):
+        return 'Monash University'
+
+    if re.fullmatch(
+        r'(?:the\s+)?university\s+of\s+melbourne[.!]?|'
+        r'melbourne(?:\s+(?:university|uni))?[.!]?|'
+        r'unimelb[.!]?',
+        cleaned,
+        re.I,
+    ):
+        return 'University of Melbourne'
+
+    return None
+
 def allowed_institutions(institution):
     """Return the service groups that can be considered for an institution."""
     if institution == 'RMIT_UP':
@@ -182,6 +219,27 @@ def route_question(question, safety_guard=None):
             'message': safety_response(safety_level),
         }
 
+    if GREETING.search(question):
+        return {
+            'route': 'clarify',
+            'institution': None,
+            'message': (
+                'Hi! I can help you find verified student wellbeing and support services. '
+                'Tell me what kind of support you are looking for and, if relevant, '
+                'which university you attend.'
+            ),
+        }
+
+    if STUDENT_INTRO.search(question):
+        return {
+            'route': 'clarify',
+            'institution': None,
+            'message': (
+                'What kind of wellbeing or student support are you looking for? '
+                'You can describe the situation in your own words.'
+            ),
+        }
+
     if re.search(r'\bmonash college\b', question, re.I):
         return {
             'route': 'clarify',
@@ -190,6 +248,18 @@ def route_question(question, safety_guard=None):
                 'This source snapshot covers Monash University, not independently '
                 'verified Monash College services. Please check your specific Monash '
                 'College support pathway rather than assume university service eligibility.'
+            ),
+        }
+
+    standalone_institution = canonical_institution_reply(question)
+
+    if standalone_institution:
+        return {
+            'route': 'clarify',
+            'institution': detect_institution(standalone_institution),
+            'message': (
+                'What kind of wellbeing or student support are you looking for? '
+                'You can describe the situation in your own words.'
             ),
         }
 
@@ -202,6 +272,21 @@ def route_question(question, safety_guard=None):
             'message': (
                 'Which university are you seeking a service from: RMIT, Monash or the '
                 'University of Melbourne? I should not assume eligibility across institutions.'
+            ),
+        }
+
+    if (
+        institution is not None
+        and not SUPPORT_SCOPE.search(question)
+        and not ONLINE_SUPPORT.search(question)
+        and not OUT_OF_SCOPE.search(question)
+    ):
+        return {
+            'route': 'clarify',
+            'institution': institution,
+            'message': (
+                'What kind of wellbeing or student support are you looking for? '
+                'You can describe the situation in your own words.'
             ),
         }
 
