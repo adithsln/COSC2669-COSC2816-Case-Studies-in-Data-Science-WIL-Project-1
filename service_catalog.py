@@ -1,6 +1,4 @@
-"""Load the chatbot's official support-service catalogue from a simple CSV file."""
-
-from __future__ import annotations
+"""Load and validate the official support-service catalogue."""
 
 import csv
 import hashlib
@@ -8,10 +6,10 @@ import json
 from pathlib import Path
 from urllib.parse import urlsplit
 
-ROOT = Path(__file__).resolve().parent
-CATALOG_PATH = ROOT / "data" / "official_services.csv"
+BASE_DIR = Path(__file__).resolve().parent
+CATALOG_FILE = BASE_DIR / "data" / "official_services.csv"
 
-REQUIRED_COLUMNS = (
+REQUIRED_COLUMNS = [
     "id",
     "institution",
     "title",
@@ -20,7 +18,7 @@ REQUIRED_COLUMNS = (
     "eligibility",
     "contact",
     "url",
-)
+]
 
 ALLOWED_INSTITUTIONS = {
     "RMIT_SHARED",
@@ -39,14 +37,12 @@ ALLOWED_HOSTS = {
     "www.lifeline.org.au",
 }
 
-
-def _split_needs(value: str) -> list[str]:
-    """Convert a pipe-separated CSV field into a clean list of topic tags."""
+def split_needs(value):
+    """Convert the pipe-separated needs field into a list."""
     return [item.strip() for item in value.split("|") if item.strip()]
 
-
-def load_catalog(path: Path | str = CATALOG_PATH) -> list[dict]:
-    """Load and validate the support-service catalogue."""
+def load_catalog(path=CATALOG_FILE):
+    """Load the service catalogue and check that every record is usable."""
     path = Path(path)
 
     if not path.is_file():
@@ -58,12 +54,16 @@ def load_catalog(path: Path | str = CATALOG_PATH) -> list[dict]:
         reader = csv.DictReader(file)
 
         if reader.fieldnames is None:
-            raise ValueError("official_services.csv has no header row.")
+            raise ValueError(
+                "official_services.csv has no header row."
+            )
 
         missing_columns = [
-            column for column in REQUIRED_COLUMNS
+            column
+            for column in REQUIRED_COLUMNS
             if column not in reader.fieldnames
         ]
+
         if missing_columns:
             raise ValueError(
                 "official_services.csv is missing required columns: "
@@ -80,9 +80,11 @@ def load_catalog(path: Path | str = CATALOG_PATH) -> list[dict]:
             }
 
             empty_fields = [
-                column for column, value in record.items()
+                column
+                for column, value in record.items()
                 if not value
             ]
+
             if empty_fields:
                 raise ValueError(
                     f"Row {row_number} has empty required fields: "
@@ -93,56 +95,62 @@ def load_catalog(path: Path | str = CATALOG_PATH) -> list[dict]:
 
             if service_id in seen_ids:
                 raise ValueError(
-                    f"Duplicate service ID in official_services.csv: {service_id}"
+                    "Duplicate service ID in official_services.csv: "
+                    f"{service_id}"
                 )
 
             seen_ids.add(service_id)
 
-            if record["institution"] not in ALLOWED_INSTITUTIONS:
+            institution = record["institution"]
+
+            if institution not in ALLOWED_INSTITUTIONS:
                 raise ValueError(
                     f"Unexpected institution for {service_id}: "
-                    f"{record['institution']}"
+                    f"{institution}"
                 )
 
-            parsed_url = urlsplit(record["url"])
+            source_url = urlsplit(record["url"])
 
             if (
-                parsed_url.scheme != "https"
-                or parsed_url.netloc.lower() not in ALLOWED_HOSTS
+                source_url.scheme != "https"
+                or source_url.netloc.lower() not in ALLOWED_HOSTS
             ):
                 raise ValueError(
                     f"Unsupported official source URL for {service_id}: "
                     f"{record['url']}"
                 )
 
-            needs = _split_needs(record["needs"])
+            record["needs"] = split_needs(record["needs"])
 
-            if not needs:
+            if not record["needs"]:
                 raise ValueError(
                     f"No support-topic tags were supplied for {service_id}."
                 )
 
-            record["needs"] = needs
             records.append(record)
 
     if not records:
-        raise ValueError("official_services.csv is empty.")
+        raise ValueError(
+            "official_services.csv is empty."
+        )
 
     return records
 
-def snapshot_hash(records: list[dict]) -> str:
-    """Return a stable hash so Chroma rebuilds when the CSV catalogue changes."""
-    canonical = json.dumps(
+def snapshot_hash(records):
+    """Create a stable hash so the vector store can detect catalogue changes."""
+    catalogue_text = json.dumps(
         records,
         ensure_ascii=False,
         sort_keys=True,
         separators=(",", ":"),
     )
 
-    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    return hashlib.sha256(
+        catalogue_text.encode("utf-8")
+    ).hexdigest()
 
-def as_context(record: dict) -> str:
-    """Convert one service record into text used by retrieval and service selection."""
+def as_context(record):
+    """Convert one service record into the text used for retrieval."""
     return "\n".join(
         [
             f"Service ID: {record['id']}",
