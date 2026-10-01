@@ -348,6 +348,3 @@ if __name__ == "__main__":
     print(f"For out final evaluation, we tested {total_cases} stident support scenarios against independently checked reference answers.")
     print(f"The chatbot correctly identified the appropriate service and contact information in {successful_routings} out of {total_cases}.")
     print(f"Overall Naviagation Accuracy: {(successful_routings/total_cases)*100:.1f}%")
-
-
-
