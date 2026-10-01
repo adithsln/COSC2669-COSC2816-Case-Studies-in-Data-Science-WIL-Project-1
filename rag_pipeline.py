@@ -8,8 +8,14 @@ import json
 import re
 from pathlib import Path
 
-from navigation_core import SafetyGuard, route_question, allowed_institutions, is_explicit_minor, adult_reporting_context_confirmed
-from source_catalog import load_catalog, snapshot_hash, as_context
+from support_navigation import (
+    SafetyGuard,
+    route_question,
+    allowed_institutions,
+    adult_reporting_context_confirmed,
+)
+
+from service_catalog import load_catalog, snapshot_hash, as_context
 
 ROOT = Path(__file__).resolve().parent
 VECTOR_DIR = ROOT / 'data' / 'vector_store'

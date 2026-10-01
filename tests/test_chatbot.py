@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from navigation_core import SafetyGuard, detect_institution, route_question, allowed_institutions, adult_reporting_context_confirmed
 from source_catalog import load_catalog, snapshot_hash
-import document_loader_New_RAGAS_Evaluation as pipe
+import document_loader as pipe
 
 
 class FakeRetriever:

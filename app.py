@@ -9,8 +9,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import streamlit as st
-from document_loader import init_rag_system, run_navigation
-from source_catalog import load_catalog
+from rag_pipeline import init_rag_system, run_navigation
+from service_catalog import load_catalog
 
 ROOT = Path(__file__).resolve().parent
 LOGO = ROOT / 'assets' / 'WIL CHATBOT LOGO.png'

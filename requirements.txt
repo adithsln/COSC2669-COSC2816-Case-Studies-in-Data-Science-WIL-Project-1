@@ -1,11 +1,6 @@
-langchain
+streamlit
 langchain-core
-langchain-community
-pypdf
-pymupdf
 sentence-transformers
-faiss-cpu
 chromadb
 python-dotenv
-langchain_groq
-langchain_ollama
+langchain-ollama
