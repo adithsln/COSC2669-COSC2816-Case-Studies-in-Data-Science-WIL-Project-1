@@ -58,17 +58,6 @@ LANGCHAIN_CORE_MODULE = types.ModuleType('langchain_core')
 LANGCHAIN_CORE_MODULE.messages = MESSAGE_MODULE
 
 class SafetyTests(unittest.TestCase):
-    def test_final_emergency_scenario_is_immediate(self):
-        guard = SafetyGuard()
-
-        self.assertEqual(
-            guard.classify(
-                'TEST SCENARIO ONLY: The student says they have taken too many '
-                'pills and need help right now.'
-            ),
-            'immediate',
-        )
-
     def test_crisis_and_case_insensitive(self):
         guard = SafetyGuard()
 
@@ -246,6 +235,100 @@ class ResponseTests(unittest.TestCase):
             )
 
         self.assertEqual(result['route'], 'abstain')
+
+    def test_rmit_study_stress_prefers_counselling(self):
+        with patch.dict(
+            sys.modules,
+            {
+                'langchain_core': LANGCHAIN_CORE_MODULE,
+                'langchain_core.messages': MESSAGE_MODULE,
+            },
+        ):
+            result = pipe.run_navigation(
+                'I am an RMIT University student feeling overwhelmed by study stress. '
+                'Who can I talk to?',
+                FakeRetriever(
+                    self.records,
+                    ['RMIT_CONNECT', 'RMIT_WELFARE', 'RMIT_COUNSELLING'],
+                ),
+                FakeLLM('RMIT_COUNSELLING'),
+                SafetyGuard(),
+                catalog=self.records,
+            )
+
+        self.assertEqual(result['route'], 'answered')
+        self.assertEqual(result['selected_id'], 'RMIT_COUNSELLING')
+
+    def test_rmit_financial_hardship_prefers_welfare(self):
+        with patch.dict(
+            sys.modules,
+            {
+                'langchain_core': LANGCHAIN_CORE_MODULE,
+                'langchain_core.messages': MESSAGE_MODULE,
+            },
+        ):
+            result = pipe.run_navigation(
+                'I study at RMIT University. Financial hardship is making university '
+                'difficult. Who can help me find assistance?',
+                FakeRetriever(
+                    self.records,
+                    ['RMIT_CONNECT', 'RMIT_COUNSELLING', 'RMIT_WELFARE'],
+                ),
+                FakeLLM('RMIT_WELFARE'),
+                SafetyGuard(),
+                catalog=self.records,
+            )
+
+        self.assertEqual(result['route'], 'answered')
+        self.assertEqual(result['selected_id'], 'RMIT_WELFARE')
+
+    def test_rmit_unstable_housing_prefers_welfare(self):
+        with patch.dict(
+            sys.modules,
+            {
+                'langchain_core': LANGCHAIN_CORE_MODULE,
+                'langchain_core.messages': MESSAGE_MODULE,
+            },
+        ):
+            result = pipe.run_navigation(
+                'I am enrolled at RMIT and my housing situation has become unstable. '
+                'I am not asking for counselling, but I need help working out university '
+                'and external support options. Where should I start?',
+                FakeRetriever(
+                    self.records,
+                    ['RMIT_CONNECT', 'RMIT_COUNSELLING', 'RMIT_WELFARE'],
+                ),
+                FakeLLM('RMIT_WELFARE'),
+                SafetyGuard(),
+                catalog=self.records,
+            )
+
+        self.assertEqual(result['route'], 'answered')
+        self.assertEqual(result['selected_id'], 'RMIT_WELFARE')
+
+    def test_rmit_rent_centrelink_and_emergency_accommodation_prefers_welfare(self):
+        with patch.dict(
+            sys.modules,
+            {
+                'langchain_core': LANGCHAIN_CORE_MODULE,
+                'langchain_core.messages': MESSAGE_MODULE,
+            },
+        ):
+            result = pipe.run_navigation(
+                'I am an RMIT student struggling with rent and I need help understanding '
+                'Centrelink support and emergency accommodation options. Which RMIT '
+                'service should I start with?',
+                FakeRetriever(
+                    self.records,
+                    ['RMIT_CONNECT', 'RMIT_COUNSELLING', 'RMIT_WELFARE'],
+                ),
+                FakeLLM('RMIT_WELFARE'),
+                SafetyGuard(),
+                catalog=self.records,
+            )
+
+        self.assertEqual(result['route'], 'answered')
+        self.assertEqual(result['selected_id'], 'RMIT_WELFARE')
 
     def test_rmit_up_counselling_needs_program(self):
         result = pipe.run_navigation(

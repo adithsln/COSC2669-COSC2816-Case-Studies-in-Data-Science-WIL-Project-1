@@ -1,6 +1,5 @@
 """Streamlit interface for the student wellbeing support-navigation chatbot."""
 
-import base64
 import json
 import os
 import uuid
@@ -10,7 +9,8 @@ from pathlib import Path
 import streamlit as st
 
 from rag_pipeline import init_rag_system, run_navigation
-from support_navigation import canonical_institution_reply
+from support_navigation import canonical_institution_reply, detect_institution
+
 
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / 'assets'
@@ -23,7 +23,14 @@ CHAT_HISTORY_DIR = BASE_DIR / 'chat_histories'
 SAVE_CHATS = os.getenv('WIL_SAVE_CHATS', '0').strip() == '1'
 
 APP_TITLE = 'Tertiary Student Wellbeing and Support Navigation Chatbot'
-MAIN_LOGO_WIDTH = 240
+
+INSTITUTION_DISPLAY_NAMES = {
+    'RMIT_UNIVERSITY': 'RMIT University',
+    'RMIT_UP': 'RMIT UP',
+    'MONASH': 'Monash University',
+    'MELBOURNE': 'University of Melbourne',
+}
+
 
 st.set_page_config(
     page_title=APP_TITLE,
@@ -47,15 +54,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+
 @st.cache_resource(show_spinner='Loading the support-navigation chatbot...')
 def load_backend():
     """Load the RAG pipeline once for the current Streamlit process."""
     return init_rag_system()
 
-def image_data_uri(file_path):
-    """Return a local PNG as a data URI for centred HTML rendering."""
-    encoded = base64.b64encode(file_path.read_bytes()).decode('ascii')
-    return f'data:image/png;base64,{encoded}'
 
 def list_saved_chats():
     """Load locally saved chats when chat persistence is enabled."""
@@ -79,6 +83,7 @@ def list_saved_chats():
         key=lambda chat: chat.get('timestamp', ''),
         reverse=True,
     )
+
 
 def save_current_chat():
     """Save the current chat locally only when explicitly enabled."""
@@ -109,6 +114,7 @@ def save_current_chat():
         encoding='utf-8',
     )
 
+
 def archive_current_chat():
     """Keep the current chat available within the active Streamlit session."""
     if not st.session_state.get('messages'):
@@ -132,6 +138,7 @@ def archive_current_chat():
         'messages': list(st.session_state.messages),
     }
 
+
 def start_new_chat():
     """Archive the visible conversation and start an empty chat."""
     if 'chat_archive' not in st.session_state:
@@ -144,6 +151,7 @@ def start_new_chat():
     st.session_state.pending_question = None
     st.session_state.pending_institution = None
 
+
 def open_chat(chat):
     """Open a previous chat in the current Streamlit session."""
     archive_current_chat()
@@ -152,6 +160,7 @@ def open_chat(chat):
     st.session_state.messages = chat.get('messages', [])
     st.session_state.pending_question = None
     st.session_state.pending_institution = None
+
 
 if 'chat_archive' not in st.session_state:
     st.session_state.chat_archive = {}
@@ -164,6 +173,7 @@ if 'pending_question' not in st.session_state:
 
 if 'pending_institution' not in st.session_state:
     st.session_state.pending_institution = None
+
 
 with st.sidebar:
     if LOGO_FILE.is_file():
@@ -198,50 +208,20 @@ with st.sidebar:
             open_chat(chat)
             st.rerun()
 
-if DISPLAY_LOGO_FILE.is_file():
-    st.markdown(
-        f'''
-        <div style="text-align: center; margin-bottom: 0.5rem;">
-            <img
-                src="{image_data_uri(DISPLAY_LOGO_FILE)}"
-                style="width: {MAIN_LOGO_WIDTH}px; max-width: 45vw; height: auto;"
-                alt="Tertiary Student Wellbeing and Support Navigation Chatbot logo"
-            >
-        </div>
-        ''',
-        unsafe_allow_html=True,
-    )
 
-st.markdown(
-    f'''
-    <h1 style="
-        text-align: center;
-        margin-top: 0.25rem;
-        margin-bottom: 0.65rem;
-    ">
-        {APP_TITLE}
-    </h1>
-    ''',
-    unsafe_allow_html=True,
-)
+logo_left, logo_centre, logo_right = st.columns([1, 1, 1])
 
-st.markdown(
-    '''
-    <p style="
-        text-align: center;
-        color: #6b7280;
-        font-size: 1rem;
-        line-height: 1.6;
-        max-width: 1100px;
-        margin: 0 auto 1.25rem auto;
-    ">
-        Research prototype for navigating published student support pathways.
-        It is not an AI therapist, diagnostic service or emergency service.
-        Current coverage includes RMIT University, RMIT UP, Monash University
-        and the University of Melbourne.
-    </p>
-    ''',
-    unsafe_allow_html=True,
+with logo_centre:
+    if DISPLAY_LOGO_FILE.is_file():
+        st.image(str(DISPLAY_LOGO_FILE), width=360)
+
+st.title(APP_TITLE)
+
+st.caption(
+    'Research prototype for navigating published student support pathways. '
+    'It is not an AI therapist, diagnostic service or emergency service. '
+    'Current coverage includes RMIT University, RMIT UP, Monash University '
+    'and the University of Melbourne.'
 )
 
 st.markdown(
@@ -254,6 +234,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+
 try:
     retriever, llm, safety_guard = load_backend()
 except Exception as error:
@@ -263,6 +244,7 @@ except Exception as error:
     )
     st.code(str(error))
     st.stop()
+
 
 for message in st.session_state.messages:
     with st.chat_message(message['role']):
@@ -284,6 +266,10 @@ if prompt:
 
     navigation_prompt = prompt
     institution_reply = canonical_institution_reply(prompt)
+    detected_institution = detect_institution(prompt)
+    detected_institution_name = INSTITUTION_DISPLAY_NAMES.get(
+        detected_institution
+    )
     pending_question = st.session_state.get('pending_question')
     pending_institution = st.session_state.get('pending_institution')
 
@@ -337,9 +323,11 @@ if prompt:
         and result['answer'].startswith(
             'What kind of wellbeing or student support are you looking for?'
         )
-        and institution_reply
+        and (institution_reply or detected_institution_name)
     ):
-        st.session_state.pending_institution = institution_reply
+        st.session_state.pending_institution = (
+            institution_reply or detected_institution_name
+        )
         st.session_state.pending_question = None
 
     st.session_state.messages.append(
