@@ -147,7 +147,7 @@ Across all 20 recommendation cases, the contact details for the selected service
 
 Of the 8 new final-test questions, 5 required a support recommendation and 4 of those 5 were correct.
 
-The frozen final evaluation also identified an important safety weakness. In one emergency scenario, the chatbot asked for more information instead of directing the student to urgent help.
+The final evaluation also identified an important safety weakness. In one emergency scenario, the chatbot asked for more information instead of directing the student to urgent help.
 
 That specific routing problem was corrected after the evaluation. The current prototype now sends that same scenario directly to urgent support. Broader emergency and safety testing is still needed before student deployment.
 
