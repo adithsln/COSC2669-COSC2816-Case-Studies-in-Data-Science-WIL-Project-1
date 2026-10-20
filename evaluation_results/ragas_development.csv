@@ -1,0 +1,313 @@
+case_id,user_input,retrieved_contexts,response,reference,faithfulness,answer_relevancy,llm_context_precision_with_reference,context_recall
+S01,I am an RMIT University student feeling overwhelmed by study stress. Who can I talk to?,"['Service ID: RMIT_COUNSELLING\nService: RMIT Counselling and Psychological Services\nInstitution: RMIT_UNIVERSITY\nRelevant needs: stress, anxiety, counselling, mental health, study pressure\nOfficial-source summary: Free confidential short-term counselling for stress, anxiety, low mood and study pressure. This is routine support, not an emergency service.\nEligibility: Current RMIT University students located in Australia. RMIT UP students should use the separate RMIT UP counselling pathway published on the RMIT UP Student Wellbeing page.\nContact: Book through the official counselling page / Student Connect portal.\nOfficial page: https://www.rmit.edu.au/students/support-services/health-safety-wellbeing/mental-health-counselling/counselling']","**Possible first contact: RMIT Counselling and Psychological Services**
+
+Free confidential short-term counselling for stress, anxiety, low mood and study pressure. This is routine support, not an emergency service.
+
+**Published eligibility:** Current RMIT University students located in Australia. RMIT UP students should use the separate RMIT UP counselling pathway published on the RMIT UP Student Wellbeing page.
+
+**Official contact / next step:** Book through the official counselling page / Student Connect portal.
+
+**Official source:** [Open the official service page](https://www.rmit.edu.au/students/support-services/health-safety-wellbeing/mental-health-counselling/counselling)  
+https://www.rmit.edu.au/students/support-services/health-safety-wellbeing/mental-health-counselling/counselling
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: RMIT_COUNSELLING
+Service: RMIT Counselling and Psychological Services
+Institution: RMIT_UNIVERSITY
+Relevant needs: stress, anxiety, counselling, mental health, study pressure
+Official-source summary: Free confidential short-term counselling for stress, anxiety, low mood and study pressure. This is routine support, not an emergency service.
+Eligibility: Current RMIT University students located in Australia. RMIT UP students should use the separate RMIT UP counselling pathway published on the RMIT UP Student Wellbeing page.
+Contact: Book through the official counselling page / Student Connect portal.
+Official page: https://www.rmit.edu.au/students/support-services/health-safety-wellbeing/mental-health-counselling/counselling
+
+Service ID: RMIT_WELFARE
+Service: RMIT Student Welfare Advisors
+Institution: RMIT_SHARED
+Relevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation
+Official-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.
+Eligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.
+Contact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.
+Official page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors",0.909090909,0.337471924,1,1
+S02,I study at RMIT University. Financial hardship is making university difficult. Who can help me find assistance?,"['Service ID: RMIT_WELFARE\nService: RMIT Student Welfare Advisors\nInstitution: RMIT_SHARED\nRelevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation\nOfficial-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.\nEligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.\nContact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.\nOfficial page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors']","**Possible first contact: RMIT Student Welfare Advisors**
+
+Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.
+
+**Published eligibility:** Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.
+
+**Official contact / next step:** Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.
+
+**Official source:** [Open the official service page](https://www.rmit.edu.au/students/support-services/student-welfare-advisors)  
+https://www.rmit.edu.au/students/support-services/student-welfare-advisors
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: RMIT_WELFARE
+Service: RMIT Student Welfare Advisors
+Institution: RMIT_SHARED
+Relevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation
+Official-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.
+Eligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.
+Contact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.
+Official page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors
+
+Service ID: RMIT_CONNECT
+Service: RMIT Student Connect
+Institution: RMIT_UNIVERSITY
+Relevant needs: where to start, service lookup, contact, student enquiry
+Official-source summary: Official first-contact enquiries and appointment navigation, including wellbeing, support and housing.
+Eligibility: RMIT students; students in specialist programs should check their dedicated pathway.
+Contact: Official web portal and support channels; phone +61 3 9925 5000. Check current hours on source.
+Official page: https://www.rmit.edu.au/students/support-services/student-connect",0.818181818,0.628591187,1,1
+S03,I am an RMIT University student. I need urgent mental health support after hours. What is the official phone number?,"['Service ID: RMIT_URGENT\nService: RMIT Urgent Mental Health Support\nInstitution: RMIT_SHARED\nRelevant needs: urgent, after hours, crisis, night time, mental health\nOfficial-source summary: The official RMIT urgent mental-health support route is available by telephone or text around the clock. For immediate danger call 000.\nEligibility: Published urgent support route for RMIT students in Australia; confirm location if the student is overseas.\nContact: Call 1300 305 737 or text 0488 884 162, 24/7.\nOfficial page: https://www.rmit.edu.au/about/our-locations-and-facilities/facilities/safety-security/campus-security/emergency-crisis-support', 'Service ID: RMIT_CONNECT\nService: RMIT Student Connect\nInstitution: RMIT_UNIVERSITY\nRelevant needs: where to start, service lookup, contact, student enquiry\nOfficial-source summary: Official first-contact enquiries and appointment navigation, including wellbeing, support and housing.\nEligibility: RMIT students; students in specialist programs should check their dedicated pathway.\nContact: Official web portal and support channels; phone +61 3 9925 5000. Check current hours on source.\nOfficial page: https://www.rmit.edu.au/students/support-services/student-connect', 'Service ID: RMIT_WELFARE\nService: RMIT Student Welfare Advisors\nInstitution: RMIT_SHARED\nRelevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation\nOfficial-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.\nEligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.\nContact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.\nOfficial page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors']","**Possible first contact: RMIT Urgent Mental Health Support**
+
+The official RMIT urgent mental-health support route is available by telephone or text around the clock. For immediate danger call 000.
+
+**Published eligibility:** Published urgent support route for RMIT students in Australia; confirm location if the student is overseas.
+
+**Official contact / next step:** Call 1300 305 737 or text 0488 884 162, 24/7.
+
+**Official source:** [Open the official service page](https://www.rmit.edu.au/about/our-locations-and-facilities/facilities/safety-security/campus-security/emergency-crisis-support)  
+https://www.rmit.edu.au/about/our-locations-and-facilities/facilities/safety-security/campus-security/emergency-crisis-support
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: RMIT_URGENT
+Service: RMIT Urgent Mental Health Support
+Institution: RMIT_SHARED
+Relevant needs: urgent, after hours, crisis, night time, mental health
+Official-source summary: The official RMIT urgent mental-health support route is available by telephone or text around the clock. For immediate danger call 000.
+Eligibility: Published urgent support route for RMIT students in Australia; confirm location if the student is overseas.
+Contact: Call 1300 305 737 or text 0488 884 162, 24/7.
+Official page: https://www.rmit.edu.au/about/our-locations-and-facilities/facilities/safety-security/campus-security/emergency-crisis-support",1,0.798261188,1,1
+S04,I am an international RMIT UP Foundation Studies student. How do I contact counselling?,"['Service ID: RMIT_UP_COUNSELLING\nService: RMIT UP Student Wellbeing and counselling\nInstitution: RMIT_UP\nRelevant needs: counselling, stress, wellbeing, anxiety, foundation, fast track, english language\nOfficial-source summary: RMIT UP provides a separate counselling contact. Appointments may be by phone, video or in person during published weekday availability.\nEligibility: Free and confidential counselling is published for RMIT UP international students studying in Foundation Studies, Fast Track and English Language program courses.\nContact: Email wellbeing@rmit.edu.au or call (03) 9925 8172; see the official page for current appointment details.\nOfficial page: https://www.rmit.edu.au/up/student-support/student-wellbeing', 'Service ID: RMIT_WELFARE\nService: RMIT Student Welfare Advisors\nInstitution: RMIT_SHARED\nRelevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation\nOfficial-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.\nEligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.\nContact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.\nOfficial page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors', 'Service ID: ESAFETY_TERTIARY\nService: eSafety tertiary-student online safety resources\nInstitution: GENERAL\nRelevant needs: cyberbullying, online abuse, social media, digital habits, reporting\nOfficial-source summary: The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.\nEligibility: General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.\nContact: Read the official student guidance and reporting links.\nOfficial page: https://www.esafety.gov.au/educators/tertiary-hub/students']","**Possible first contact: RMIT UP Student Wellbeing and counselling**
+
+RMIT UP provides a separate counselling contact. Appointments may be by phone, video or in person during published weekday availability.
+
+**Published eligibility:** Free and confidential counselling is published for RMIT UP international students studying in Foundation Studies, Fast Track and English Language program courses.
+
+**Official contact / next step:** Email wellbeing@rmit.edu.au or call (03) 9925 8172; see the official page for current appointment details.
+
+**Official source:** [Open the official service page](https://www.rmit.edu.au/up/student-support/student-wellbeing)  
+https://www.rmit.edu.au/up/student-support/student-wellbeing
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: RMIT_UP_COUNSELLING
+Service: RMIT UP Student Wellbeing and counselling
+Institution: RMIT_UP
+Relevant needs: counselling, stress, wellbeing, anxiety, foundation, fast track, english language
+Official-source summary: RMIT UP provides a separate counselling contact. Appointments may be by phone, video or in person during published weekday availability.
+Eligibility: Free and confidential counselling is published for RMIT UP international students studying in Foundation Studies, Fast Track and English Language program courses.
+Contact: Email wellbeing@rmit.edu.au or call (03) 9925 8172; see the official page for current appointment details.
+Official page: https://www.rmit.edu.au/up/student-support/student-wellbeing",0.8,0.738603126,1,1
+S06,I study at Monash University and would like routine counselling. Who can I contact?,"['Service ID: MONASH_COUNSELLING\nService: Monash Counselling\nInstitution: MONASH\nRelevant needs: stress, counselling, anxiety, wellbeing, depression\nOfficial-source summary: Monash offers free confidential counselling in person or by telehealth for university students.\nEligibility: Monash University students. This record does not establish Monash College eligibility; Monash College students should use or confirm their own dedicated support pathway.\nContact: Appointments: (03) 9905 3020. Weekday office hours on source page.\nOfficial page: https://www.monash.edu/students/support/health/counselling/appointments', 'Service ID: MONASH_SAFER\nService: Monash Safer Community Unit\nInstitution: MONASH\nRelevant needs: harassment, threatening, bullying, safety, online abuse\nOfficial-source summary: Responds to reports and disclosures of concerning, threatening and inappropriate behaviour. Offers reporting and support navigation information.\nEligibility: Monash students and staff; confirm service scope using the official page.\nContact: Phone +61 3 9905 1599; safercommunity@monash.edu. Weekdays 9am–5pm.\nOfficial page: https://www.monash.edu/about/safety-security/safer-community-unit', 'Service ID: ESAFETY_TERTIARY\nService: eSafety tertiary-student online safety resources\nInstitution: GENERAL\nRelevant needs: cyberbullying, online abuse, social media, digital habits, reporting\nOfficial-source summary: The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.\nEligibility: General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.\nContact: Read the official student guidance and reporting links.\nOfficial page: https://www.esafety.gov.au/educators/tertiary-hub/students']","**Possible first contact: Monash Counselling**
+
+Monash offers free confidential counselling in person or by telehealth for university students.
+
+**Published eligibility:** Monash University students. This record does not establish Monash College eligibility; Monash College students should use or confirm their own dedicated support pathway.
+
+**Official contact / next step:** Appointments: (03) 9905 3020. Weekday office hours on source page.
+
+**Official source:** [Open the official service page](https://www.monash.edu/students/support/health/counselling/appointments)  
+https://www.monash.edu/students/support/health/counselling/appointments
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MONASH_COUNSELLING
+Service: Monash Counselling
+Institution: MONASH
+Relevant needs: stress, counselling, anxiety, wellbeing, depression
+Official-source summary: Monash offers free confidential counselling in person or by telehealth for university students.
+Eligibility: Monash University students. This record does not establish Monash College eligibility; Monash College students should use or confirm their own dedicated support pathway.
+Contact: Appointments: (03) 9905 3020. Weekday office hours on source page.
+Official page: https://www.monash.edu/students/support/health/counselling/appointments",0.909090909,0.785110795,1,0.5
+S07,I am a Monash student and need mental health phone counselling tonight. What is the number?,"['Service ID: MONASH_247\nService: Monash 24/7 phone counselling\nInstitution: MONASH\nRelevant needs: urgent, after hours, night, phone counselling\nOfficial-source summary: Monash publishes round-the-clock phone counselling access for students.\nEligibility: Monash University students. Check the source page for overseas access numbers.\nContact: 1300 STUDENT (1300 788 336), available 24/7 in Australia.\nOfficial page: https://www.monash.edu/students/support/health/counselling/appointments', 'Service ID: MONASH_COUNSELLING\nService: Monash Counselling\nInstitution: MONASH\nRelevant needs: stress, counselling, anxiety, wellbeing, depression\nOfficial-source summary: Monash offers free confidential counselling in person or by telehealth for university students.\nEligibility: Monash University students. This record does not establish Monash College eligibility; Monash College students should use or confirm their own dedicated support pathway.\nContact: Appointments: (03) 9905 3020. Weekday office hours on source page.\nOfficial page: https://www.monash.edu/students/support/health/counselling/appointments', 'Service ID: MONASH_SAFER\nService: Monash Safer Community Unit\nInstitution: MONASH\nRelevant needs: harassment, threatening, bullying, safety, online abuse\nOfficial-source summary: Responds to reports and disclosures of concerning, threatening and inappropriate behaviour. Offers reporting and support navigation information.\nEligibility: Monash students and staff; confirm service scope using the official page.\nContact: Phone +61 3 9905 1599; safercommunity@monash.edu. Weekdays 9am–5pm.\nOfficial page: https://www.monash.edu/about/safety-security/safer-community-unit']","**Possible first contact: Monash 24/7 phone counselling**
+
+Monash publishes round-the-clock phone counselling access for students.
+
+**Published eligibility:** Monash University students. Check the source page for overseas access numbers.
+
+**Official contact / next step:** 1300 STUDENT (1300 788 336), available 24/7 in Australia.
+
+**Official source:** [Open the official service page](https://www.monash.edu/students/support/health/counselling/appointments)  
+https://www.monash.edu/students/support/health/counselling/appointments
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MONASH_247
+Service: Monash 24/7 phone counselling
+Institution: MONASH
+Relevant needs: urgent, after hours, night, phone counselling
+Official-source summary: Monash publishes round-the-clock phone counselling access for students.
+Eligibility: Monash University students. Check the source page for overseas access numbers.
+Contact: 1300 STUDENT (1300 788 336), available 24/7 in Australia.
+Official page: https://www.monash.edu/students/support/health/counselling/appointments",0.857142857,0.428355159,1,1
+S08,"I am currently enrolled at University of Melbourne, in Australia, and need counselling for study stress.","['Service ID: MELB_CAPS\nService: University of Melbourne CAPS counselling\nInstitution: MELBOURNE\nRelevant needs: stress, counselling, anxiety, wellbeing\nOfficial-source summary: Free confidential short-term individual psychological counselling and related support for eligible students.\nEligibility: Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.\nContact: Appointments via the official CAPS page; phone +61 3 8344 6927.\nOfficial page: https://services.unimelb.edu.au/counsel/making-an-appointment', 'Service ID: MELB_WORKSHOPS\nService: University of Melbourne CAPS wellbeing workshops\nInstitution: MELBOURNE\nRelevant needs: workshop, group, webinar, mindfulness, digital habits\nOfficial-source summary: CAPS offers free webinars, workshops and group programs on mental health, personal development and wellbeing.\nEligibility: Check individual program availability, enrollment/registration and current dates on the official page.\nContact: View the workshops page; enquiries: caps-workshops@unimelb.edu.au.\nOfficial page: https://services.unimelb.edu.au/counsel/workshops-and-webinars', 'Service ID: ESAFETY_TERTIARY\nService: eSafety tertiary-student online safety resources\nInstitution: GENERAL\nRelevant needs: cyberbullying, online abuse, social media, digital habits, reporting\nOfficial-source summary: The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.\nEligibility: General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.\nContact: Read the official student guidance and reporting links.\nOfficial page: https://www.esafety.gov.au/educators/tertiary-hub/students']","**Possible first contact: University of Melbourne CAPS counselling**
+
+Free confidential short-term individual psychological counselling and related support for eligible students.
+
+**Published eligibility:** Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.
+
+**Official contact / next step:** Appointments via the official CAPS page; phone +61 3 8344 6927.
+
+**Official source:** [Open the official service page](https://services.unimelb.edu.au/counsel/making-an-appointment)  
+https://services.unimelb.edu.au/counsel/making-an-appointment
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MELB_CAPS
+Service: University of Melbourne CAPS counselling
+Institution: MELBOURNE
+Relevant needs: stress, counselling, anxiety, wellbeing
+Official-source summary: Free confidential short-term individual psychological counselling and related support for eligible students.
+Eligibility: Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.
+Contact: Appointments via the official CAPS page; phone +61 3 8344 6927.
+Official page: https://services.unimelb.edu.au/counsel/making-an-appointment",1,0.683264449,1,1
+S09,"At the University of Melbourne are CAPS wellbeing workshops free, and where can I see them?","['Service ID: MELB_WORKSHOPS\nService: University of Melbourne CAPS wellbeing workshops\nInstitution: MELBOURNE\nRelevant needs: workshop, group, webinar, mindfulness, digital habits\nOfficial-source summary: CAPS offers free webinars, workshops and group programs on mental health, personal development and wellbeing.\nEligibility: Check individual program availability, enrollment/registration and current dates on the official page.\nContact: View the workshops page; enquiries: caps-workshops@unimelb.edu.au.\nOfficial page: https://services.unimelb.edu.au/counsel/workshops-and-webinars']","**Possible first contact: University of Melbourne CAPS wellbeing workshops**
+
+CAPS offers free webinars, workshops and group programs on mental health, personal development and wellbeing.
+
+**Published eligibility:** Check individual program availability, enrollment/registration and current dates on the official page.
+
+**Official contact / next step:** View the workshops page; enquiries: caps-workshops@unimelb.edu.au.
+
+**Official source:** [Open the official service page](https://services.unimelb.edu.au/counsel/workshops-and-webinars)  
+https://services.unimelb.edu.au/counsel/workshops-and-webinars
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MELB_WORKSHOPS
+Service: University of Melbourne CAPS wellbeing workshops
+Institution: MELBOURNE
+Relevant needs: workshop, group, webinar, mindfulness, digital habits
+Official-source summary: CAPS offers free webinars, workshops and group programs on mental health, personal development and wellbeing.
+Eligibility: Check individual program availability, enrollment/registration and current dates on the official page.
+Contact: View the workshops page; enquiries: caps-workshops@unimelb.edu.au.
+Official page: https://services.unimelb.edu.au/counsel/workshops-and-webinars",0.9,0.882563726,1,0.125
+S10,I study at the University of Melbourne and need the university 24/7 mental health crisis support phone or text number.,"['Service ID: MELB_CRISIS\nService: University of Melbourne Mental Health Crisis Support Service\nInstitution: MELBOURNE\nRelevant needs: urgent, after hours, night, crisis, distress\nOfficial-source summary: The university provides a 24/7 mental-health crisis support service for immediate advice and information about next steps. It is not ongoing counselling. In immediate danger call 000.\nEligibility: University of Melbourne students seeking 24/7 mental-health support and advice. In immediate danger, call 000; the service is not ongoing counselling.\nContact: Call 1300 219 459 or text 0480 079 188, 24/7.\nOfficial page: https://services.unimelb.edu.au/counsel/emergency-and-crisis-support', 'Service ID: MELB_CAPS\nService: University of Melbourne CAPS counselling\nInstitution: MELBOURNE\nRelevant needs: stress, counselling, anxiety, wellbeing\nOfficial-source summary: Free confidential short-term individual psychological counselling and related support for eligible students.\nEligibility: Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.\nContact: Appointments via the official CAPS page; phone +61 3 8344 6927.\nOfficial page: https://services.unimelb.edu.au/counsel/making-an-appointment', 'Service ID: LIFELINE\nService: Lifeline Australia\nInstitution: GENERAL\nRelevant needs: crisis, distress, support, urgent, suicide\nOfficial-source summary: Lifeline offers confidential crisis support through trained human supporters. Immediate danger requires 000.\nEligibility: Australia-wide crisis support by phone, text and chat. If life is in danger, call 000.\nContact: Call 13 11 14 or text 0477 13 11 14, available 24/7.\nOfficial page: https://www.lifeline.org.au/131114']","**Possible first contact: University of Melbourne Mental Health Crisis Support Service**
+
+The university provides a 24/7 mental-health crisis support service for immediate advice and information about next steps. It is not ongoing counselling. In immediate danger call 000.
+
+**Published eligibility:** University of Melbourne students seeking 24/7 mental-health support and advice. In immediate danger, call 000; the service is not ongoing counselling.
+
+**Official contact / next step:** Call 1300 219 459 or text 0480 079 188, 24/7.
+
+**Official source:** [Open the official service page](https://services.unimelb.edu.au/counsel/emergency-and-crisis-support)  
+https://services.unimelb.edu.au/counsel/emergency-and-crisis-support
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MELB_CRISIS
+Service: University of Melbourne Mental Health Crisis Support Service
+Institution: MELBOURNE
+Relevant needs: urgent, after hours, night, crisis, distress
+Official-source summary: The university provides a 24/7 mental-health crisis support service for immediate advice and information about next steps. It is not ongoing counselling. In immediate danger call 000.
+Eligibility: University of Melbourne students seeking 24/7 mental-health support and advice. In immediate danger, call 000; the service is not ongoing counselling.
+Contact: Call 1300 219 459 or text 0480 079 188, 24/7.
+Official page: https://services.unimelb.edu.au/counsel/emergency-and-crisis-support",0.75,0.851905996,1,0.333333333
+S11,I am a tertiary student in Australia experiencing online harassment. Where can I find official online safety guidance?,"['Service ID: ESAFETY_TERTIARY\nService: eSafety tertiary-student online safety resources\nInstitution: GENERAL\nRelevant needs: cyberbullying, online abuse, social media, digital habits, reporting\nOfficial-source summary: The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.\nEligibility: General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.\nContact: Read the official student guidance and reporting links.\nOfficial page: https://www.esafety.gov.au/educators/tertiary-hub/students']","**Possible first contact: eSafety tertiary-student online safety resources**
+
+The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.
+
+**Published eligibility:** General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.
+
+**Official contact / next step:** Read the official student guidance and reporting links.
+
+**Official source:** [Open the official service page](https://www.esafety.gov.au/educators/tertiary-hub/students)  
+https://www.esafety.gov.au/educators/tertiary-hub/students
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: ESAFETY_TERTIARY
+Service: eSafety tertiary-student online safety resources
+Institution: GENERAL
+Relevant needs: cyberbullying, online abuse, social media, digital habits, reporting
+Official-source summary: The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.
+Eligibility: General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.
+Contact: Read the official student guidance and reporting links.
+Official page: https://www.esafety.gov.au/educators/tertiary-hub/students",0.714285714,0,1,1
+S13,"I am enrolled at RMIT and my housing situation has become unstable. I am not asking for counselling, but I need help working out university and external support options. Where should I start?","['Service ID: RMIT_WELFARE\nService: RMIT Student Welfare Advisors\nInstitution: RMIT_SHARED\nRelevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation\nOfficial-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.\nEligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.\nContact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.\nOfficial page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors']","**Possible first contact: RMIT Student Welfare Advisors**
+
+Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.
+
+**Published eligibility:** Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.
+
+**Official contact / next step:** Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.
+
+**Official source:** [Open the official service page](https://www.rmit.edu.au/students/support-services/student-welfare-advisors)  
+https://www.rmit.edu.au/students/support-services/student-welfare-advisors
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: RMIT_WELFARE
+Service: RMIT Student Welfare Advisors
+Institution: RMIT_SHARED
+Relevant needs: where to start, overwhelmed, welfare, financial, housing, support navigation
+Official-source summary: Welfare Advisors provide short-term assistance navigating university processes and can connect students with appropriate RMIT or external services. They do not themselves deliver psychological counselling.
+Eligibility: Available to eligible students enrolled at RMIT Australia, RMIT UP and RMIT Online, excluding single-subject RMIT Online students.
+Contact: Book through Student Connect / Student Welfare; Student Connect phone +61 3 9925 5000, select Student Support.
+Official page: https://www.rmit.edu.au/students/support-services/student-welfare-advisors
+
+Service ID: RMIT_CONNECT
+Service: RMIT Student Connect
+Institution: RMIT_UNIVERSITY
+Relevant needs: where to start, service lookup, contact, student enquiry
+Official-source summary: Official first-contact enquiries and appointment navigation, including wellbeing, support and housing.
+Eligibility: RMIT students; students in specialist programs should check their dedicated pathway.
+Contact: Official web portal and support channels; phone +61 3 9925 5000. Check current hours on source.
+Official page: https://www.rmit.edu.au/students/support-services/student-connect",0.866666667,0.49733109,1,1
+S14,I am a Monash University student in Australia. It is late at night and I want to speak with a counsellor by phone. What published service can I use?,"['Service ID: MONASH_247\nService: Monash 24/7 phone counselling\nInstitution: MONASH\nRelevant needs: urgent, after hours, night, phone counselling\nOfficial-source summary: Monash publishes round-the-clock phone counselling access for students.\nEligibility: Monash University students. Check the source page for overseas access numbers.\nContact: 1300 STUDENT (1300 788 336), available 24/7 in Australia.\nOfficial page: https://www.monash.edu/students/support/health/counselling/appointments', 'Service ID: MONASH_COUNSELLING\nService: Monash Counselling\nInstitution: MONASH\nRelevant needs: stress, counselling, anxiety, wellbeing, depression\nOfficial-source summary: Monash offers free confidential counselling in person or by telehealth for university students.\nEligibility: Monash University students. This record does not establish Monash College eligibility; Monash College students should use or confirm their own dedicated support pathway.\nContact: Appointments: (03) 9905 3020. Weekday office hours on source page.\nOfficial page: https://www.monash.edu/students/support/health/counselling/appointments', 'Service ID: MONASH_SAFER\nService: Monash Safer Community Unit\nInstitution: MONASH\nRelevant needs: harassment, threatening, bullying, safety, online abuse\nOfficial-source summary: Responds to reports and disclosures of concerning, threatening and inappropriate behaviour. Offers reporting and support navigation information.\nEligibility: Monash students and staff; confirm service scope using the official page.\nContact: Phone +61 3 9905 1599; safercommunity@monash.edu. Weekdays 9am–5pm.\nOfficial page: https://www.monash.edu/about/safety-security/safer-community-unit']","**Possible first contact: Monash 24/7 phone counselling**
+
+Monash publishes round-the-clock phone counselling access for students.
+
+**Published eligibility:** Monash University students. Check the source page for overseas access numbers.
+
+**Official contact / next step:** 1300 STUDENT (1300 788 336), available 24/7 in Australia.
+
+**Official source:** [Open the official service page](https://www.monash.edu/students/support/health/counselling/appointments)  
+https://www.monash.edu/students/support/health/counselling/appointments
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MONASH_247
+Service: Monash 24/7 phone counselling
+Institution: MONASH
+Relevant needs: urgent, after hours, night, phone counselling
+Official-source summary: Monash publishes round-the-clock phone counselling access for students.
+Eligibility: Monash University students. Check the source page for overseas access numbers.
+Contact: 1300 STUDENT (1300 788 336), available 24/7 in Australia.
+Official page: https://www.monash.edu/students/support/health/counselling/appointments",1,0.37299043,1,0.888888889
+S15,I study at Monash and another person is repeatedly threatening me online. Which Monash unit handles concerning or threatening behaviour?,"['Service ID: MONASH_SAFER\nService: Monash Safer Community Unit\nInstitution: MONASH\nRelevant needs: harassment, threatening, bullying, safety, online abuse\nOfficial-source summary: Responds to reports and disclosures of concerning, threatening and inappropriate behaviour. Offers reporting and support navigation information.\nEligibility: Monash students and staff; confirm service scope using the official page.\nContact: Phone +61 3 9905 1599; safercommunity@monash.edu. Weekdays 9am–5pm.\nOfficial page: https://www.monash.edu/about/safety-security/safer-community-unit']","**Possible first contact: Monash Safer Community Unit**
+
+Responds to reports and disclosures of concerning, threatening and inappropriate behaviour. Offers reporting and support navigation information.
+
+**Published eligibility:** Monash students and staff; confirm service scope using the official page.
+
+**Official contact / next step:** Phone +61 3 9905 1599; safercommunity@monash.edu. Weekdays 9am–5pm.
+
+**Official source:** [Open the official service page](https://www.monash.edu/about/safety-security/safer-community-unit)  
+https://www.monash.edu/about/safety-security/safer-community-unit
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MONASH_SAFER
+Service: Monash Safer Community Unit
+Institution: MONASH
+Relevant needs: harassment, threatening, bullying, safety, online abuse
+Official-source summary: Responds to reports and disclosures of concerning, threatening and inappropriate behaviour. Offers reporting and support navigation information.
+Eligibility: Monash students and staff; confirm service scope using the official page.
+Contact: Phone +61 3 9905 1599; safercommunity@monash.edu. Weekdays 9am–5pm.
+Official page: https://www.monash.edu/about/safety-security/safer-community-unit",0.928571429,0.620271849,1,1
+S16,"I am currently enrolled at the University of Melbourne and located in Victoria. I want short-term confidential counselling for anxiety, not crisis support. What service should I use?","['Service ID: MELB_CRISIS\nService: University of Melbourne Mental Health Crisis Support Service\nInstitution: MELBOURNE\nRelevant needs: urgent, after hours, night, crisis, distress\nOfficial-source summary: The university provides a 24/7 mental-health crisis support service for immediate advice and information about next steps. It is not ongoing counselling. In immediate danger call 000.\nEligibility: University of Melbourne students seeking 24/7 mental-health support and advice. In immediate danger, call 000; the service is not ongoing counselling.\nContact: Call 1300 219 459 or text 0480 079 188, 24/7.\nOfficial page: https://services.unimelb.edu.au/counsel/emergency-and-crisis-support', 'Service ID: MELB_CAPS\nService: University of Melbourne CAPS counselling\nInstitution: MELBOURNE\nRelevant needs: stress, counselling, anxiety, wellbeing\nOfficial-source summary: Free confidential short-term individual psychological counselling and related support for eligible students.\nEligibility: Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.\nContact: Appointments via the official CAPS page; phone +61 3 8344 6927.\nOfficial page: https://services.unimelb.edu.au/counsel/making-an-appointment', 'Service ID: MELB_WORKSHOPS\nService: University of Melbourne CAPS wellbeing workshops\nInstitution: MELBOURNE\nRelevant needs: workshop, group, webinar, mindfulness, digital habits\nOfficial-source summary: CAPS offers free webinars, workshops and group programs on mental health, personal development and wellbeing.\nEligibility: Check individual program availability, enrollment/registration and current dates on the official page.\nContact: View the workshops page; enquiries: caps-workshops@unimelb.edu.au.\nOfficial page: https://services.unimelb.edu.au/counsel/workshops-and-webinars']","**Possible first contact: University of Melbourne CAPS counselling**
+
+Free confidential short-term individual psychological counselling and related support for eligible students.
+
+**Published eligibility:** Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.
+
+**Official contact / next step:** Appointments via the official CAPS page; phone +61 3 8344 6927.
+
+**Official source:** [Open the official service page](https://services.unimelb.edu.au/counsel/making-an-appointment)  
+https://services.unimelb.edu.au/counsel/making-an-appointment
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: MELB_CAPS
+Service: University of Melbourne CAPS counselling
+Institution: MELBOURNE
+Relevant needs: stress, counselling, anxiety, wellbeing
+Official-source summary: Free confidential short-term individual psychological counselling and related support for eligible students.
+Eligibility: Currently enrolled University of Melbourne students located in Australia. Students offshore must check the university’s separate guidance.
+Contact: Appointments via the official CAPS page; phone +61 3 8344 6927.
+Official page: https://services.unimelb.edu.au/counsel/making-an-appointment",0.9,0.630888587,0.583333333,1
+S17,"I am 25, ordinarily live in Australia, and have received targeted severely threatening online messages. Where can I check whether eSafety can investigate?","['Service ID: ESAFETY_ADULT\nService: eSafety adult cyber abuse reporting\nInstitution: GENERAL\nRelevant needs: harassment, adult cyber abuse, online harm, reporting, cyber abuse\nOfficial-source summary: Provides steps and reporting information for severe online abuse. Report the content to the platform first and consult the published reporting threshold and steps.\nEligibility: The formal scheme concerns people ordinarily living in Australia aged 18 or older and subject to the defined serious-abuse threshold. A general upsetting post does not automatically qualify.\nContact: Review reporting criteria on the official page and follow its reporting instructions.\nOfficial page: https://www.esafety.gov.au/key-topics/adult-cyber-abuse/report-adult-cyber-abuse', 'Service ID: ESAFETY_TERTIARY\nService: eSafety tertiary-student online safety resources\nInstitution: GENERAL\nRelevant needs: cyberbullying, online abuse, social media, digital habits, reporting\nOfficial-source summary: The Australian eSafety Commissioner provides tertiary-student resources on understanding online harm and where to find help. Different formal report categories have different eligibility criteria.\nEligibility: General education resources for tertiary students; do not assume eligibility for a specific reporting scheme.\nContact: Read the official student guidance and reporting links.\nOfficial page: https://www.esafety.gov.au/educators/tertiary-hub/students']","**Possible first contact: eSafety adult cyber abuse reporting**
+
+Provides steps and reporting information for severe online abuse. Report the content to the platform first and consult the published reporting threshold and steps.
+
+**Published eligibility:** The formal scheme concerns people ordinarily living in Australia aged 18 or older and subject to the defined serious-abuse threshold. A general upsetting post does not automatically qualify.
+
+**Official contact / next step:** Review reporting criteria on the official page and follow its reporting instructions.
+
+**Official source:** [Open the official service page](https://www.esafety.gov.au/key-topics/adult-cyber-abuse/report-adult-cyber-abuse)  
+https://www.esafety.gov.au/key-topics/adult-cyber-abuse/report-adult-cyber-abuse
+
+If you are unsure of your eligibility, confirm directly with the service. This is information navigation, not clinical assessment or emergency assistance.","Service ID: ESAFETY_ADULT
+Service: eSafety adult cyber abuse reporting
+Institution: GENERAL
+Relevant needs: harassment, adult cyber abuse, online harm, reporting, cyber abuse
+Official-source summary: Provides steps and reporting information for severe online abuse. Report the content to the platform first and consult the published reporting threshold and steps.
+Eligibility: The formal scheme concerns people ordinarily living in Australia aged 18 or older and subject to the defined serious-abuse threshold. A general upsetting post does not automatically qualify.
+Contact: Review reporting criteria on the official page and follow its reporting instructions.
+Official page: https://www.esafety.gov.au/key-topics/adult-cyber-abuse/report-adult-cyber-abuse",1,0.555053495,1,0.1
