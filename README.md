@@ -24,7 +24,7 @@ The current source catalogue covers RMIT University, RMIT UP, Monash University 
 
 The main flow is:
 
-"`text
+```text
 Student question
  ↓
 Safety and scope checks
@@ -44,7 +44,7 @@ The language model does not write the published eligibility or contact details i
 
 ## Project structure
 
-"`text
+```text
 Project-1-WIL/
 ├── app.py
 ├── rag_pipeline.py
@@ -120,13 +120,13 @@ The chatbot runs locally with Python and Ollama. The main chatbot packages are i
 
 For normal chatbot use, install the project dependencies from the project folder:
 
-"`bash
+```bash
 pip install -r requirements.txt
 ```
 
 The RAGAS evaluation was run in a separate frozen package environment. That environment is recorded in:
 
-"`text
+```text
 evaluation_results/ragas_environment.txt
 ```
 
@@ -148,7 +148,7 @@ ollama pull llama3.1:8b
 
 From the project folder:
 
-"`bash
+```bash
 python -m streamlit run app.py
 ```
 
@@ -158,7 +158,7 @@ The generated vector store is stored locally and is not committed to GitHub.
 
 ## Run the automated tests
 
-"`bash
+```bash
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
@@ -208,13 +208,13 @@ For this run, we used:
 
 The saved results are in:
 
-"`text
+```text
 evaluation_results/ragas_development.csv
 ```
 
 The package environment used for that run is in:
 
-"`text
+```text
 evaluation_results/ragas_environment.txt
 ```
 
@@ -241,10 +241,10 @@ The Streamlit prototype is intended for fictional testing scenarios, not real pr
 
 Disk-based chat saving is off by default. It can only be enabled locally by setting:
 
-"`text
+```text
 WIL_SAVE_CHATS=1
 ```
 
 If someone is in immediate danger in Australia, call `000`.
 
-Lifeline provides 24/7 crisis support on '13 11 14`.
+Lifeline provides 24/7 crisis support on `13 11 14`.
