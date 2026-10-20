@@ -29,7 +29,7 @@ from service_catalog import as_context, load_catalog
 
 BASE_DIR = Path(__file__).resolve().parent
 SCENARIOS_CSV = BASE_DIR/ 'evaluation' /'scenarios.csv'
-OUT_DIR = BASE_DIR/ 'eval_results'
+OUT_DIR = BASE_DIR / 'evaluation_results'
 TOP_K = 3
 
 JUDGE_MODEL = 'llama3.1:8b'
@@ -45,7 +45,6 @@ def split_ids(value):
     if pd.isna(value) or not str(value).strip():
         return []
     return [part.strip() for part in str(value).split('|') if part.strip()]
-
 
 def run_pipeline(df, retriever, llm, safety_guard, catalog):
 
@@ -101,8 +100,6 @@ def run_pipeline(df, retriever, llm, safety_guard, catalog):
         )
     return pd.DataFrame(rows)
 
-
-
 def build_ragas_dataset(results, catalog_by_id):
 
     eligible = results[
@@ -126,7 +123,6 @@ def build_ragas_dataset(results, catalog_by_id):
         )
         case_ids.append(row.case_id)
     return EvaluationDataset(samples=samples), case_ids
-
 
 def run_ragas(dataset):
 
@@ -189,8 +185,7 @@ def main():
     print(f"Question scored: {len(baseline)}")
     print(f"Baseline hit@{TOP_K}: {baseline['hit_at_k'].mean():.2%}")
     print(f"Baseline top-1 accuracy: {baseline['top1_correct'].mean():.2%}")
-    baseline.to_csv(OUT_DIR/ f'basline_{args.split}.csv', index=False)
-
+    baseline.to_csv(OUT_DIR / f'baseline_{args.split}.csv', index=False)
 
     print("\n=== Deterministic metric ===")
     print(f"Route accuracy: {results['route_correct'].mean():.2%}")
@@ -210,7 +205,6 @@ def main():
         'accepted_ids','selected_id'
         ]].to_string(index=False))
 
-
     if not args.skip_ragas:
         dataset, case_ids = build_ragas_dataset(results, catalog_by_id)
         if not case_ids:
@@ -227,8 +221,6 @@ def main():
         OUT_DIR / f'pipeline_{args.split}.json', orient='records', indent=2
     )
     print(f'\nSaved to {OUT_DIR}')
-
-
 
 if __name__ == '__main__':
     main()
